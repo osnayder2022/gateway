@@ -8,10 +8,14 @@ spring:
     base: dc=empresa,dc=com
     username: cn=admin,dc=empresa,dc=com
     password: adminpassword123
-  cloud:
-    gateway:
-      routes:
-        - id: mi_servicio
-          uri: https://httpbin.org # URL de prueba a la que redirigir
-          predicates:
-            - Path=/get/**
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: products-service
+#          uri: http://localhost:8086
+#          predicates:
+#            - name: Path
+#              args:
+#                patterns:
+#                  - /api/products
+#                  - /api/products/**

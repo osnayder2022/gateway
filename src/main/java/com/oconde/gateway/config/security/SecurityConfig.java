@@ -44,7 +44,7 @@ public class SecurityConfig {
                 .httpBasic(ServerHttpSecurity.HttpBasicSpec::disable)
                 .formLogin(ServerHttpSecurity.FormLoginSpec::disable)
                 .authorizeExchange(exchanges -> exchanges
-                        .pathMatchers("/auth/login", "/actuator/**").permitAll() // Login y Actuator públicos
+                        .pathMatchers("/auth/login", "/actuator/**").permitAll()// Login y Actuator públicos
                         .anyExchange().authenticated()                             // El resto exige JWT válido
                 )
                 // Añadimos nuestro filtro JWT antes del filtro de autorización
